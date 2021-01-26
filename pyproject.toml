@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "pgfilteryml_viewer"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+sqlalchemy = "^1.3.20"
+taskipy = "^1.4.0"
+aiofiles = "^0.6.0"
+flask = "^1.1.2"
+flask-cors = "^3.0.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.1.2"
+assertpy = "^1.1"
+litecli = "^1.4.1"
+
+[tool.taskipy.tasks]
+test = "python -m unittest tests/test_*.py"
+lint = "pylint tests taskipy"
+build = "responder build"
+initfixture = "python initfixture.py"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
