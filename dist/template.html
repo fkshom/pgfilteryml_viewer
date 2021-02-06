@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=1024, initial-scale=1.0">
   <title>template</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    textarea.form-control {
+  height: 100%;
+}
+  </style>
 </head>
 <body>
   <div id="app">
@@ -14,13 +19,13 @@
         <div class="col">
     <div class="form-group">
       <label for="InputDatetime">作業日時</label>
-      <input type="text" class="form-control" id="InputDatetime" aria-describedby="datetimeHelp" v-model="datetime" value="02/15（日）13:00-15:00" placeholder="02/15（日）13:00-15:00">
+      <input type="text" class="form-control" id="InputDatetime" aria-describedby="datetimeHelp" v-model="datetime" placeholder="02/15（日）13:00-15:00">
       <small id="datetimeHelp" class="form-text text-muted">作業日時を入力します</small>
     </div>
     <div class="form-group">
       <label for="InputWorkContent">作業内容</label>
       <textarea class="form-control" id="InputWorkContent" rows="3" v-model="workcontent"></textarea>
-    </div>      
+    </div>
     <div class="form-group">
       <label for="InputWorker">作業者</label>
       <input type="text" class="form-control" id="InputWorker" aria-describedby="datetimeHelp" v-model="worker" placeholder="田中、鈴木">
@@ -34,17 +39,17 @@
     </div>
   </div>
   <div class="col">
-  <pre>
-    # 作業報告
-    @abc @def
+  <textarea rows=20 style="min-width: 100%; max-height: max-content;">
+# 作業報告
+@abc @def
 
-    ```
-    作業日時：{{ datetime }}
-    作業内容：{{ workcontent }}
-    作業者：{{ worker }}
-    連絡先：{{ place }}
-    ```
-  </pre>
+```
+作業日時：{{ datetime }}
+作業内容：{{ workcontent }}
+作業者：{{ worker }}
+連絡先：{{ place }}
+```
+  </textarea>
 </div></div>
   </form>
   </div>
