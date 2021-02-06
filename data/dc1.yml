@@ -1,0 +1,7 @@
+dc01:
+  pg01:
+  - { description: DEFAULT_OUT_ACCEPT, protocol: any, source_ip: 0.0.0.0/0, destination_ip: 0.0.0.0/0 }
+  - { description: Server1-Server2_PROTO_ACCEPT, protocol: tcp, source_ip: 1.1.1.1, source_port: 1025-65535, destination_ip: 2.2.2.2, destination_port: 80 }
+  - { description: Server1-Server2_PROTO_RET_ACCEPT, protocol: tcp, destination_ip: 1.1.1.1, destination_port: 1025-65535, source_ip: 2.2.2.2, source_port: 80 }
+  - { description: Server1-Server3_PROTO_ACCEPT, protocol: tcp, source_ip: 1.1.1.1, source_port: 1025-65535, destination_ip: 3.3.3.3, destination_port: 443 }
+  - { description: Server1-Server3_PROTO_RET_ACCEPT, protocol: tcp, destination_ip: 1.1.1.1, destination_port: 1025-65535, source_ip: 3.3.3.3, source_port: 443, unko: 1 }
